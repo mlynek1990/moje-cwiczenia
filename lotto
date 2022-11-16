@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Random random = new Random();
+		int wylosowanaLiczba;
+		int[] pulaLiczb = new int[6];
+		losowanie: for (int i=0;i<6;i++){
+		    wylosowanaLiczba = random.nextInt(6)+1;
+		    for (int j=0;j<i;j++){
+		        if(wylosowanaLiczba==pulaLiczb[j]){
+		            --i;
+		            continue losowanie;
+		        }
+		    }
+		    pulaLiczb[i] = wylosowanaLiczba;
+		    System.out.print(pulaLiczb[i]+", ");
+
+		}
+		System.out.println("");
+		int liczbaUzytkownika;
+		int[]liczbyUzytkownika = new int[6];
+		wyborLiczb: for (int k=0;k<6;k++){
+		    System.out.println("Wybierz liczbe z zakresu od 1 - 49");
+		    liczbaUzytkownika = scanner.nextInt();
+		    for (int m=0;m<k;m++){
+		        if (liczbaUzytkownika==liczbyUzytkownika[m]){
+		            System.out.println("Liczby nie mogą sie powtarzać"); 
+		            --k;
+		            continue wyborLiczb;
+		        }
+		        if (liczbaUzytkownika>49){
+		            System.out.println("Za duża liczba");
+		            --k;
+		            continue wyborLiczb;
+		        }
+		        if (liczbaUzytkownika<=0){
+		            System.out.println("Za mała liczba");
+		            --k;
+		            continue wyborLiczb;
+		        }
+		    }
+		    liczbyUzytkownika[k] = liczbaUzytkownika;
+		    
+		} 
+	}
+} /*1. wyweietlic tablice
+    2. porównac z tablica random
+    3. wyswietlic wygrana
+    4. dodac opcje wyboru ilosci losowan*/
