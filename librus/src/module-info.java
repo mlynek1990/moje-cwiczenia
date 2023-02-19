@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Grinder
+ *
+ */
+module librus {
+}
